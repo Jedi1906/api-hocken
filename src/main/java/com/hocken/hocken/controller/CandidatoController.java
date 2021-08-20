@@ -20,6 +20,9 @@ public class CandidatoController {
             return candidatoDAO.getCandidatos();
         }
 
+
+
+
     @RequestMapping(value = "api/candidatos", method = RequestMethod.POST)
     public void registro(@RequestBody Candidato candidato){
             /*Cifrado de contraseña Hash*/
