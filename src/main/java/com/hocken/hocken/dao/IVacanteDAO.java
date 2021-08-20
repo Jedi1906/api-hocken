@@ -28,4 +28,6 @@ public interface IVacanteDAO extends CrudRepository<Vacante,Integer> {
 
     @Query(value = "select v from Vacante v join Empresa e on v.id_empresa = e.id_empresa where v.nombre_vac= ?1")
     List<Vacante> getVacantesbyNEmpresa(String nombre);
+    @Query("select v.id_vacante,v.modalidad from Vacante v group by (v.modalidad)")
+    List<Vacante> getSelectbyID();
 }

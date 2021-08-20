@@ -19,9 +19,16 @@ public class VacanteImpl implements VacanteDAO{
         String query= "FROM Vacante";
         return entityManager.createQuery(query).getResultList();
     }
+
     /*Nueva vacante*/
     @Override
     public void nuevaVacante(Vacante vacante) {
         entityManager.merge(vacante);
+    }
+
+    @Override
+    public List<Vacante> getNombre() {
+
+        return entityManager.createQuery("SELECT id_vacante,modalidad from Vacante group by(modalidad)").getResultList();
     }
 }

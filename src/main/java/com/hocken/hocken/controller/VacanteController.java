@@ -37,27 +37,17 @@ public class VacanteController {
 
     /**Filtros de vacantes por Nombre, Modalidad, rango y area*/
     @RequestMapping(value = "api/vacantepor/{nombre_vac}")
-    public List<Vacante> getVacanteByNombre_Vac(@PathVariable String nombre_vac){
-        return vacanteIm.getVacanteByNombre_vac(nombre_vac);
-    }
-
+    public List<Vacante> getVacanteByNombre_Vac(@PathVariable String nombre_vac){return vacanteIm.getVacanteByNombre_vac(nombre_vac);}
     @RequestMapping(value = "api/vacante/por/{modalidad}")
-    public List<Vacante> getVacanteByModalidad(@PathVariable String modalidad){
-        return vacanteIm.getVacanteByModalidad(modalidad);
-    }
+    public List<Vacante> getVacanteByModalidad(@PathVariable String modalidad){return vacanteIm.getVacanteByModalidad(modalidad);}
     @RequestMapping(value = "api/vacante/by/{rango_sul}")
-    public List<Vacante> getVacanteByRango_sul(@PathVariable String rango){
-        return vacanteIm.getVacanteByRango_sul(rango);
-    }
-    @RequestMapping(value = "api/vacanteE/by/{nombre_vac}")
-    public List<Vacante> getVacantebyNEmpresa(@PathVariable String nombre_vac){
-        return vacanteIm.getVacantesbyNEmpresa(nombre_vac);
-    }
+    public List<Vacante> getVacanteByRango_sul(@PathVariable String rango){return vacanteIm.getVacanteByRango_sul(rango);}
+    /*Filtro para Select*/
+    @RequestMapping(value ="api/selected")
+    public List<Vacante> getNombrebiID(){return vacanteDAO.getNombre();}
 
     @RequestMapping(value = "api/vacantes/por/{ubicacion}")
-    public List<Vacante> getVacanteByubicacion(@PathVariable String ubicacion){
-        return vacanteIm.getVacanteByUbicacion(ubicacion);
-    }
+    public List<Vacante> getVacanteByubicacion(@PathVariable String ubicacion){return vacanteIm.getVacanteByUbicacion(ubicacion);}
     @RequestMapping(value = "api/vacantes/by/{area}")
     public List<Vacante> getVacanteAllbyArea(@PathVariable String area){
         return vacanteIm.getVacanteAllByArea(area);

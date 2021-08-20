@@ -30,6 +30,12 @@ public class VacanteIm  implements IVacanteService{
     /*Vacante relacionada */
     @Override
     public List<Vacante> getVacantesbyNEmpresa(String nombre) {return IvacanteDAO.getVacantesbyNEmpresa(nombre);}
+
+    @Override
+    public List<Vacante> getSelectbyID() {
+        return IvacanteDAO.getSelectbyID();
+    }
+
     @Override
     public Page<Vacante> findAll(Pageable pageable) {
         return IvacanteDAO.findAll(pageable);

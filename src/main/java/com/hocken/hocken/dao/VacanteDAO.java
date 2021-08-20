@@ -7,5 +7,6 @@ import java.util.List;
 public interface VacanteDAO{
     List<Vacante> getVacantes();
     void nuevaVacante(Vacante vacante);
+    List<Vacante> getNombre();
     
 }

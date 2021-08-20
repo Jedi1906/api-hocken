@@ -15,5 +15,6 @@ public interface IVacanteService {
     List<Vacante> getVacanteAllByArea(String area);
     Page<Vacante> findAll(Pageable pageable);
     List<Vacante> getVacantesbyNEmpresa(String nombre);
+    List<Vacante> getSelectbyID();
 
 }
